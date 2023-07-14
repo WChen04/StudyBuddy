@@ -22,7 +22,7 @@ const children = ({ remainingTime }) => {
     hours == 0
       ? minutes == 0
         ? seconds == 0
-          ? `${seconds}`
+          ? `0${seconds}`
           : `${seconds}`
         : seconds < 10
         ? `${minutes}:0${seconds}`
@@ -43,7 +43,7 @@ export default function MyTimer(props) {
   const [Seconds, setSeconds] = React.useState("");
 
   function reset() {
-    window.location.reload(false);
+    window.location.reload(true);
   }
   return (
     <SafeAreaView style={styles.container}>
@@ -56,7 +56,7 @@ export default function MyTimer(props) {
           console.log("test");
           Alert.alert("Done!");
           props.incrementMoney(Seconds);
-          props.saveData(Seconds);
+          //props.saveData(Seconds);
         }}
         updateInterval={0}
         isSmoothColorTransition={true}
