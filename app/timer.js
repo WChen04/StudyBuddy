@@ -36,11 +36,12 @@ const children = ({ remainingTime }) => {
   return UpdatedTime;
 };
 
-export default function MyTimer() {
+export default function MyTimer(props) {
   const [isPlaying, setIsPlaying] = React.useState(false);
-  const [number1, onChangeNumber1] = React.useState("");
-  const [number2, onChangeNumber2] = React.useState("");
-  const [number3, onChangeNumber3] = React.useState("");
+  const [Hour, setHour] = React.useState("");
+  const [Minute, setMinute] = React.useState("");
+  const [Seconds, setSeconds] = React.useState("");
+
   function reset() {
     window.location.reload(false);
   }
@@ -48,10 +49,15 @@ export default function MyTimer() {
     <SafeAreaView style={styles.container}>
       <CountdownCircleTimer
         isPlaying={isPlaying}
-        duration={number1 * 3600 + number2 * 60 + number3 * 1}
+        duration={Hour * 3600 + Minute * 60 + Seconds * 1}
         colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
         colorsTime={[20, 10, 5, 0]}
-        onComplete={() => Alert.alert("Done!")}
+        onComplete={() => {
+          console.log("test");
+          Alert.alert("Done!");
+          props.incrementMoney(Seconds);
+          props.saveData(Seconds);
+        }}
         updateInterval={0}
         isSmoothColorTransition={true}
       >
@@ -69,8 +75,8 @@ export default function MyTimer() {
       <View style={styles.enterstyle}>
         <TextInput
           style={styles.textInputStyle}
-          onChangeText={onChangeNumber1}
-          value={number1}
+          onChangeText={setHour}
+          value={Hour}
           placeholder="0"
           placeholderTextColor={"lightgray"}
           keyboardType="numeric"
@@ -79,8 +85,8 @@ export default function MyTimer() {
         <Text>Hours</Text>
         <TextInput
           style={styles.textInputStyle}
-          onChangeText={onChangeNumber2}
-          value={number2}
+          onChangeText={setMinute}
+          value={Minute}
           placeholder="0"
           placeholderTextColor={"lightgray"}
           keyboardType="numeric"
@@ -89,8 +95,8 @@ export default function MyTimer() {
         <Text>Minutes</Text>
         <TextInput
           style={styles.textInputStyle}
-          onChangeText={onChangeNumber3}
-          value={number3}
+          onChangeText={setSeconds}
+          value={Seconds}
           placeholder="0"
           placeholderTextColor={"lightgray"}
           keyboardType="numeric"
