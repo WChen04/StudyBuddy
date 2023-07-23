@@ -28,34 +28,34 @@ export default function Page() {
   incrementMoney = (num) => {
     setMoney(Number(total_money) + Number(num));
   };
-  // const saveData = async () => {
-  //   try {
-  //     await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(total_money));
-  //     alert("Saved");
-  //   } catch (err) {
-  //     alert("Failed to save");
-  //   }
-  // };
-  // const readData = async () => {
-  //   try {
-  //     const value = JSON.parse(await AsyncStorage.getItem(STORAGE_KEY));
-  //     console.log("Value:");
-  //     console.log(value === null);
-  //     const savedData = await AsyncStorage.multiGet(["Will"]);
-  //     console.log(savedData);
+  const saveData = async () => {
+    try {
+      await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(total_money));
+      alert("Saved");
+    } catch (err) {
+      alert("Failed to save");
+    }
+  };
+  const readData = async () => {
+    try {
+      const value = JSON.parse(await AsyncStorage.getItem(STORAGE_KEY));
+      console.log("Value:");
+      console.log(value === null);
+      const savedData = await AsyncStorage.multiGet(["Will"]);
+      console.log(savedData);
 
-  //     if (value !== null) {
-  //       await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(total_money));
-  //       const savedData = await AsyncStorage.multiGet(["Will"]);
-  //       console.log(savedData);
-  //       console.log("good");
-  //       console.log(total_money);
-  //     }
-  //   } catch (err) {
-  //     // console.log("fail");
-  //     // alert("Failed to fetch");
-  //   }
-  // };
+      if (value !== null) {
+        await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(total_money));
+        const savedData = await AsyncStorage.multiGet(["Will"]);
+        console.log(savedData);
+        console.log("good");
+        console.log(total_money);
+      }
+    } catch (err) {
+      // console.log("fail");
+      // alert("Failed to fetch");
+    }
+  };
 
   return (
     <SafeAreaView style={styles.container}>

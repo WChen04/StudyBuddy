@@ -14,9 +14,6 @@ function HomeScreen({ navigation }) {
 function ShopScreen({ navigation }) {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Shop</Text>
-      <Text>Shop</Text>
-      <Text>Shop</Text>
       <Button
         title="Go to Shop"
         onPress={() => navigation.navigate("Shop")}
