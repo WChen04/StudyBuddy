@@ -5,10 +5,7 @@ import {
   View,
   StyleSheet,
   Button,
-  useState,
   Alert,
-  Keyboard,
-  NativeModules,
 } from "react-native";
 import Constants from "expo-constants";
 import { CountdownCircleTimer } from "react-native-countdown-circle-timer";
@@ -22,8 +19,8 @@ const children = ({ remainingTime }) => {
     hours == 0
       ? minutes == 0
         ? seconds == 0
-          ? `0${seconds}`
-          : `${seconds}`
+          ? `${seconds}`
+          : `0${seconds}`
         : seconds < 10
         ? `${minutes}:0${seconds}`
         : `${minutes}:${seconds}`
@@ -36,7 +33,7 @@ const children = ({ remainingTime }) => {
   return UpdatedTime;
 };
 
-export default function MyTimer(props) {
+function MyTimer(props) {
   const [isPlaying, setIsPlaying] = React.useState(false);
   const [Hour, setHour] = React.useState("");
   const [Minute, setMinute] = React.useState("");
@@ -47,6 +44,7 @@ export default function MyTimer(props) {
   }
   return (
     <SafeAreaView style={styles.container}>
+      <Text style={styles.spaceholder}></Text>
       <CountdownCircleTimer
         isPlaying={isPlaying}
         duration={Hour * 3600 + Minute * 60 + Seconds * 1}
@@ -116,14 +114,17 @@ export default function MyTimer(props) {
     </SafeAreaView>
   );
 }
+export default MyTimer;
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    paddingTop: Constants.statusBarHeight,
     // backgroundColor: "#ecf0f1",
+  },
+  spaceholder: {
+    paddingTop: 100,
   },
   Buttons: {
     flexDirection: "row",
