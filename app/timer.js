@@ -111,6 +111,7 @@ function MyTimer(props) {
         ></Button>
         <Button onPress={reset} title="Reset"></Button>
       </View>
+      <Text style={styles.spaceholder}></Text>
     </SafeAreaView>
   );
 }
@@ -121,10 +122,10 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    // backgroundColor: "#ecf0f1",
+    backgroundColor: "white",
   },
   spaceholder: {
-    paddingTop: 100,
+    paddingTop: 170,
   },
   Buttons: {
     flexDirection: "row",

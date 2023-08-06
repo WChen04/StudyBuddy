@@ -4,7 +4,7 @@ import React from "react";
 const shop = () => {
   return (
     <View>
-      <Text>SHOP PAGE</Text>
+      <Text>Shop Page</Text>
     </View>
   );
 };
