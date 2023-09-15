@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Magic Hat",
+    "description": "Let's Cast Some Spells!",
+    "icon": "Something",
+    "img": "Something"
+  },
+  {
+    "name": "Cowboy Hat",
+    "description": "Yee-Haw!",
+    "icon": "Something",
+    "img": "Something"
+  },
+  {
+    "name": "Fedora",
+    "description": "Hello there :)",
+    "icon": "Something",
+    "img": "Something"
+  },
+  {
+    "name": "Traffic Cone",
+    "description": "STOP IN THE NAME OF THE LAW!",
+    "icon": "Something",
+    "img": "Something"
+  }
+]

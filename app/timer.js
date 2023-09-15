@@ -21,7 +21,7 @@ const children = ({ remainingTime }) => {
         ? seconds == 0
           ? `${seconds}`
           : `0${seconds}`
-        : seconds < 10
+        : seconds <= 10
         ? `${minutes}:0${seconds}`
         : `${minutes}:${seconds}`
       : minutes < 10
