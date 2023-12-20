@@ -10,28 +10,10 @@ import {
 import Constants from "expo-constants";
 import { CountdownCircleTimer } from "react-native-countdown-circle-timer";
 import { TextInput } from "react-native-gesture-handler";
+import {time_convert} from '../helperfunctions/time_convert';
+import "../constants/styles/"
 
-const children = ({ remainingTime }) => {
-  const hours = Math.floor(remainingTime / 3600);
-  const minutes = Math.floor((remainingTime % 3600) / 60);
-  const seconds = remainingTime % 60;
-  const UpdatedTime =
-    hours == 0
-      ? minutes == 0
-        ? seconds == 0
-          ? `${seconds}`
-          : `0${seconds}`
-        : seconds <= 10
-        ? `${minutes}:0${seconds}`
-        : `${minutes}:${seconds}`
-      : minutes < 10
-      ? seconds < 10
-        ? `${hours}:0${minutes}:0${seconds}`
-        : `${hours}:0${minutes}:${seconds}`
-      : `${hours}:${minutes}:${seconds}`;
 
-  return UpdatedTime;
-};
 
 function MyTimer(props) {
   const [isPlaying, setIsPlaying] = React.useState(false);
@@ -65,7 +47,7 @@ function MyTimer(props) {
             onPress={() => setIsPlaying((prev) => !prev)}
             suppressHighlighting={true}
           >
-            {children({ remainingTime })}
+            {time_convert({ remainingTime })}
           </Text>
         )}
       </CountdownCircleTimer>
@@ -117,34 +99,34 @@ function MyTimer(props) {
 }
 export default MyTimer;
 
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "white",
-  },
-  spaceholder: {
-    paddingTop: 170,
-  },
-  Buttons: {
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-    marginTop: 30,
-    marginBottom: 30,
-  },
-  enterstyle: {
-    marginTop: 20,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    // backgroundColor: "violet",
-  },
-  textInputStyle: {
-    flexDirection: "row",
-    color: "lightgrey",
-    margin: 12,
-    borderWidth: 0.5,
-    padding: 10,
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flexDirection: "column",
+//     justifyContent: "center",
+//     alignItems: "center",
+//     backgroundColor: "white",
+//   },
+//   spaceholder: {
+//     paddingTop: 170,
+//   },
+//   Buttons: {
+//     flexDirection: "row",
+//     justifyContent: "space-evenly",
+//     marginTop: 30,
+//     marginBottom: 30,
+//   },
+//   enterstyle: {
+//     marginTop: 20,
+//     flexDirection: "row",
+//     alignItems: "center",
+//     justifyContent: "center",
+//     // backgroundColor: "violet",
+//   },
+//   textInputStyle: {
+//     flexDirection: "row",
+//     color: "lightgrey",
+//     margin: 12,
+//     borderWidth: 0.5,
+//     padding: 10,
+//   },
+// });

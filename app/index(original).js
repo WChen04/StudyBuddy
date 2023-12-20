@@ -7,12 +7,12 @@ import {
   Text,
   StyleSheet,
 } from "react-native";
-import { Stack, useRouter } from "expo-router";
-import Menu from "../constants/images/menu";
-import {
-  Lightbulb,
-  ChangeBackGroundColor,
-} from "../constants/images/lightbulb";
+// import { Stack, useRouter } from "expo-router";
+// import Menu from "../constants/images/menu";
+// import {
+//   Lightbulb,
+//   ChangeBackGroundColor,
+// } from "../constants/images/lightbulb";
 import Currency from "../constants/images/currency";
 // import MyTimer from "./home /timer";
 // import CoinMaker from "./money";
@@ -26,7 +26,6 @@ export default function Page() {
   // return <Redirect href={"home"} />;
   return (
     <View>
-      
       <Currency style={styles.currency}></Currency>
     </View>
   );
