@@ -9,7 +9,8 @@
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.19.0",
     "@react-navigation/bottom-tabs": "^6.5.8",
-    "expo": "^48.0.7",
+    "cli": "^1.0.1",
+    "expo": "^48.0.21",
     "expo-cli": "^6.3.8",
     "expo-constants": "~14.2.1",
     "expo-linking": "~4.0.1",

@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Button, StyleSheet } from "react-native";
 
-export default function CoinMaker(props) {
+export default function Moneytext(props) {
   return <Text style={styles.money}>{props.money}</Text>;
 }
 

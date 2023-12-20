@@ -5,7 +5,15 @@ export default () => {
   return (
     <Tabs screenOptions={{ tabBarShowLabel: true, headerShown: true }}>
       <Tabs.Screen
-        name="timer"
+        name="Home"
+        options={{
+          tabBarIcon: () => {
+            return <Ionicons name="home-outline" size={24} color="blue" />;
+          },
+        }}
+      />
+      <Tabs.Screen
+        name="Timer"
         options={{
           tabBarIcon: () => {
             return <AntDesign name="clockcircleo" size={24} color="blue" />;
@@ -13,7 +21,7 @@ export default () => {
         }}
       />
       <Tabs.Screen
-        name="shop"
+        name="Shop"
         options={{
           tabBarIcon: () => {
             return <Feather name="shopping-cart" size={24} color="blue" />;
@@ -21,18 +29,10 @@ export default () => {
         }}
       />
       <Tabs.Screen
-        name="settings"
+        name="Settings"
         options={{
           tabBarIcon: () => {
             return <Ionicons name="settings-outline" size={24} color="blue" />;
-          },
-        }}
-      />
-      <Tabs.Screen
-        name="index"
-        options={{
-          tabBarIcon: () => {
-            return <Ionicons name="home-outline" size={24} color="blue" />;
           },
         }}
       />

@@ -14,7 +14,7 @@ import {
   ChangeBackGroundColor,
 } from "../constants/images/lightbulb";
 import Currency from "../constants/images/currency";
-// import MyTimer from "./home /timer";
+// import MyTimer from "./timer";
 // import CoinMaker from "./money";
 // import AsyncStorage from "@react-native-async-storage/async-storage";
 // // import Bar from "./bar";
@@ -24,27 +24,28 @@ import { Redirect } from "expo-router";
 
 export default function Page() {
   // return <Redirect href={"home"} />;
+  // const [total_money, setMoney] = useState(0);
+  // const [style, setStyle] = useState(false);
+  // // const handleClick = () => {
+  // //   setStyle(!style);
+  // // };
+
+  // useEffect(() => {
+  //   // readData();
+  //   console.log(total_money);
+  // }, [total_money]);
+
+  // incrementMoney = (num) => {
+  //   setMoney(Number(total_money) + Number(num));
+  // };
   return (
     <View>
-      
+      <Text>This is where the avatar will be</Text>
       <Currency style={styles.currency}></Currency>
     </View>
   );
 }
-//   const [total_money, setMoney] = useState(0);
-//   const [style, setStyle] = useState(false);
-//   const handleClick = () => {
-//     setStyle(!style);
-//   };
 
-//   useEffect(() => {
-//     // readData();
-//     console.log(total_money);
-//   }, [total_money]);
-
-//   incrementMoney = (num) => {
-//     setMoney(Number(total_money) + Number(num));
-//   };
 //   const saveData = async () => {
 //     try {
 //       await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(total_money));
